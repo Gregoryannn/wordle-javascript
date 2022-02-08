@@ -41,3 +41,7 @@ body {
     background-color: #818384;
     margin: 4px;
 }
+
+.key-container button:nth-child(11) {
+    margin-left: 30px;
+}
