@@ -80,8 +80,15 @@ const handleClick = (letter) => {
         return
 
     }
+
+
     if (letter === 'ENTER')
-        addLetter(letter)
+        console.log('check row')
+    return
+
+}
+
+addLetter(letter)
 
 }
 
