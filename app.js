@@ -44,6 +44,7 @@ const guessRows = [
     ['', '', '', '', '']
 ]
 
+
 let currentRow = 0
 let currentTile = 0
 
@@ -63,13 +64,6 @@ guessRows.forEach((guessRow, guessRowIndex) => {
 })
 
 
-
-const handleClick = (key) => {
-    console.log('clicked')
-
-}
-
-
 keys.forEach(key => {
     const buttonElement = document.createElement('button')
     buttonElement.textContent = key
@@ -77,3 +71,18 @@ keys.forEach(key => {
     buttonElement.addEventListener('click', handleClick)
     keyboard.append(buttonElement)
 })
+
+
+const handleClick = (key) => {
+    console.log('clicked', key)
+    addLetter(key)
+
+}
+
+const addLetter = (letter) => {
+    if (currentTile < 5 && currentRow < 6) {
+        const tile = document.getElementById('guessRow-' + currentRow + '-tile-' + currentTile)
+        tile.textContent = letter
+
+    }
+}
