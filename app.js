@@ -88,9 +88,6 @@ const handleClick = (letter) => {
 
 }
 
-addLetter(letter)
-
-}
 
 const addLetter = (letter) => {
     if (currentTile < 5 && currentRow < 6) {
@@ -101,4 +98,18 @@ const addLetter = (letter) => {
         currentTile++
         console.log('guessRows', guessRows)
     }
+}
+
+
+const checkRow = () => {
+    const guess = guessRows[currentRow].join('')
+
+    if (currentTile === 5) {
+        console.log('guess is' + guess, 'wordle is' + wordle)
+        if (currentTile == quess) {
+            showMessage('Magnificent')
+
+        }
+    }
+
 }
