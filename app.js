@@ -113,3 +113,13 @@ const checkRow = () => {
     }
 
 }
+
+
+// function to allow to show messages
+
+const showMessage = (message) => {
+    const messageElement = document.createElement('p')
+    messageElement.textContent = message
+    messageDisplay.append(messageElement)
+
+}
