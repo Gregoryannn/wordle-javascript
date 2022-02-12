@@ -130,10 +130,16 @@ const flipTile = () => {
 
         const rowTiles = document.querySelector('#guessRow-' + currentRow).childNodes
         rowTiles.forEach((tile, index => {
-                        const dataLetter = tile.getAttribute('data-letter')
-                        if (dataLetter == wordle[index])
+                        -
+                        const dataLetter = tile.getAttribute('data') {
+                            if (dataLetter == wordle[index])
+                                this.classList.add('green-overlay')
 
-                        {
-                            this.classList.add('green-overlay')
+                        } else if (wordle.includes(dataLetter))
+                            tile.classList.add('yellow-overlay')
+                    } else {
+                        tile.classList.add('grey-overlay')
+                    }
 
-                        }
+
+                }
