@@ -123,3 +123,17 @@ const showMessage = (message) => {
     messageDisplay.append(messageElement)
 
 }
+
+
+
+const flipTile = () => {
+
+        const rowTiles = document.querySelector('#guessRow-' + currentRow).childNodes
+        rowTiles.forEach((tile, index => {
+                        const dataLetter = tile.getAttribute('data-letter')
+                        if (dataLetter == wordle[index])
+
+                        {
+                            this.classList.add('green-overlay')
+
+                        }
