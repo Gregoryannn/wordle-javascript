@@ -76,15 +76,17 @@ keys.forEach(key => {
 const handleClick = (letter) => {
     console.log('clicked', letter)
     if (letter === '«') {
-        console.log('delete letter')
+        deleteLetter()
         return
-
     }
-
-
     if (letter === 'ENTER')
         console.log('check row')
     return
+
+}
+
+addLetter = (letter)
+console.log('guessRows', guessRows)
 
 }
 
@@ -96,7 +98,7 @@ const addLetter = (letter) => {
         guessRows[currentRow][currentTile] = letter
         tile.setAttribute('data', letter)
         currentTile++
-        console.log('guessRows', guessRows)
+
     }
 }
 
