@@ -101,6 +101,19 @@ const addLetter = (letter) => {
 }
 
 
+
+const deleteLetter = () => {
+    if (currentTile > 0) {
+        currentTile--
+        const tile = document.getElementById('guessRow-' + currentRow + '-tile-' + currentTile)
+        tile.textContent = ''
+        guessRows[currentRow][currentTile] = ''
+        tile.setAttribute('data', '')
+    }
+}
+
+
+
 const checkRow = () => {
     const guess = guessRows[currentRow].join('')
 
@@ -113,6 +126,8 @@ const checkRow = () => {
     }
 
 }
+
+
 
 
 // function to allow to show messages
