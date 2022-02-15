@@ -1,5 +1,6 @@
-const tileDisplay = document.querySelector('#tile-container');
-const tileDisplay = document.querySelector('#key-container');
+const tileDisplay = document.querySelector('.tile-container');
+const keyboard = document.querySelector('.key-container');
+const messageDisplay = document.querySelector('.message-container')
 
 const wordle = 'SUPER'
 
@@ -111,7 +112,7 @@ const deleteLetter = () => {
         currentTile--
         const tile = document.getElementById('guessRow-' + currentRow + '-tile-' + currentTile)
         tile.textContent = ''
-        guessRows[currentRow][currentTile] = ''
+        guessRows[currentRow][wordle] = ''
         tile.setAttribute('data', '')
     }
 }
@@ -120,18 +121,14 @@ const deleteLetter = () => {
 
 const checkRow = () => {
     const guess = guessRows[currentRow].join('')
-
     if (currentTile === 5) {
         console.log('guess is' + guess, 'wordle is' + wordle)
-        if (currentTile == quess) {
+        if (wordle == quess) {
             showMessage('Magnificent')
-
         }
     }
 
 }
-
-
 
 
 // function to allow to show messages
@@ -142,7 +139,6 @@ const showMessage = (message) => {
     messageDisplay.append(messageElement)
 
 }
-
 
 
 const flipTile = () => {
