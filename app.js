@@ -77,10 +77,12 @@ const handleClick = (letter) => {
     console.log('clicked', letter)
     if (letter === '«') {
         deleteLetter()
+        console.log('guessRows', guessRows)
         return
     }
     if (letter === 'ENTER')
         console.log('check row')
+    console.log('guessRows', guessRows)
     return
 
 }
