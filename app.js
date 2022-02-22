@@ -1,8 +1,17 @@
-const tileDisplay = document.querySelector('.tile-container');
-const keyboard = document.querySelector('.key-container');
+const tileDisplay = document.querySelector('.tile-container')
+const keyboard = document.querySelector('.key-container')
 const messageDisplay = document.querySelector('.message-container')
 
-const wordle = 'SUPER'
+let wordle
+
+const getWordle = () => {
+    fetch('http://localhost:8000/word')
+        .then(response => response.json())
+        .then(json => {
+            wordle = json.toUpperCase()
+        })
+        .catch(err => console.log(err))
+}
 
 const key = [
     'Q',
@@ -70,30 +79,26 @@ keys.forEach(key => {
     const buttonElement = document.createElement('button')
     buttonElement.textContent = key
     buttonElement.setAttribute('id', key)
-    buttonElement.addEventListener('click', handleClick)
+    buttonElement.addEventListener('click', () => handleClick(key))
     keyboard.append(buttonElement)
 })
 
 
 const handleClick = (letter) => {
-    console.log('clicked', letter)
+     if (!isGameOver) {
     if (letter === '«') {
         deleteLetter()
-        console.log('guessRows', guessRows)
-        return
+         return
     }
     if (letter === 'ENTER')
-        console.log('check row')
-    console.log('guessRows', guessRows)
+       checkRow()
     return
-
 }
 
-addLetter = (letter)
-console.log('guessRows', guessRows)
-
+addLetter(letter)
+    
+   }
 }
-
 
 const addLetter = (letter) => {
     if (currentTile < 5 && currentRow < 6) {
