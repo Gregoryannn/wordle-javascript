@@ -13,6 +13,8 @@ const getWordle = () => {
         .catch(err => console.log(err))
 }
 
+getWordle()
+
 const key = [
     'Q',
     'W',
@@ -177,6 +179,7 @@ const checkRow = () => {
                 const rowTiles = document.querySelector('#guessRow-' + currentRow).childNodes
                 let checkWordle = wordle
                 const guess = []
+                
                 rowTiles.forEach((tile, index => {
                 guess.push({letter: tile.getAttribute('data'), color: 'grey-overlay'})
           })
