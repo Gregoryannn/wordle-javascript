@@ -11,7 +11,7 @@ app.get('/word', (req, res) => {
     const options = {
         method: 'GET',
         url: 'https://random-words5.p.rapidapi.com/getMultipleRandom',
-        params: {count: '5', wordLength: '5'},
+        params: { count: '5', wordLength: '5' },
         headers: {
             'x-rapidapi-host': 'random-words5.p.rapidapi.com',
             'x-rapidapi-key': process.env.RAPID_API_KEY
@@ -32,7 +32,7 @@ app.get('/check', (req, res) => {
     const options = {
         method: 'GET',
         url: 'https://twinword-word-graph-dictionary.p.rapidapi.com/association/',
-        params: {entry: word},
+        params: { entry: word },
         headers: {
             'x-rapidapi-host': 'twinword-word-graph-dictionary.p.rapidapi.com',
             'x-rapidapi-key': process.env.RAPID_API_KEY
